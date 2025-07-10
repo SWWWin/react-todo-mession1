@@ -10,15 +10,15 @@ function TodoWriteForm({ addTodo }: TodoWriteFormProps) {
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
-    if (!input.trim()) return; // 빈값 막기
-    addTodo(input.trim()); // 추가 함수 호출
-    setInput(""); // 입력 초기화
+    if (!input.trim()) return;
+    addTodo(input.trim());
+    setInput("");
   };
 
   return (
     <form
       onSubmit={onSubmit}
-      className="flex gap-2 max-w-md mx-auto p-4 bg-white rounded shadow"
+      className="flex gap-3 max-w-sm mx-auto p-5 bg-white rounded-lg shadow-md"
     >
       <input
         type="text"
@@ -26,11 +26,11 @@ function TodoWriteForm({ addTodo }: TodoWriteFormProps) {
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="할 일을 입력하세요"
-        className="flex-grow px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-gray-500"
       />
       <button
         type="submit"
-        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+        className="px-5 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
       >
         등록
       </button>

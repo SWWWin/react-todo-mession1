@@ -14,17 +14,17 @@ function TodoItem({ el, toggleTodo, deleteTodo }: Props) {
   return (
     <li
       key={el.id}
-      className="flex items-center justify-between p-3 bg-white rounded shadow hover:bg-gray-50 transition"
+      className="flex items-center justify-between p-4 bg-white rounded-lg shadow-lg hover:bg-gray-50 transition"
     >
-      <label className="flex items-center gap-3 cursor-pointer flex-1">
+      <label className="flex items-center gap-4 cursor-pointer flex-1">
         <input
           type="checkbox"
           checked={el.checked}
           onChange={() => toggleTodo(el.id)}
-          className="w-5 h-5 text-blue-600 border-gray-300 rounded focus:ring-blue-500"
+          className="w-6 h-6 text-blue-600 border-gray-300 rounded-lg focus:ring-blue-500 transition"
         />
         <span
-          className={`select-none text-lg ${
+          className={`select-none text-lg font-medium ${
             el.checked ? "line-through text-gray-400" : "text-gray-900"
           }`}
         >
@@ -33,7 +33,7 @@ function TodoItem({ el, toggleTodo, deleteTodo }: Props) {
       </label>
       <button
         onClick={() => deleteTodo(el.id)}
-        className="ml-4 text-red-500 hover:text-red-700 font-bold px-2 py-1 rounded focus:outline-none focus:ring-2 focus:ring-red-300"
+        className="ml-6 text-red-600 hover:text-red-800 font-semibold px-3 py-1 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400 transition"
         aria-label="Delete todo"
       >
         ×

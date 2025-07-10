@@ -14,7 +14,7 @@ type Props = {
 
 function TodoList({ todos, deleteTodo, toggleTodo }: Props) {
   return (
-    <ul className="max-w-md mx-auto mt-6 space-y-3">
+    <ul className="max-w-md mx-auto mt-6 space-y-4 bg-gray-50 rounded-lg p-4 shadow-mg">
       {todos &&
         todos.map((el) => (
           <TodoItem
