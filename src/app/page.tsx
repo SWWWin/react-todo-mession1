@@ -4,9 +4,9 @@ import TodoList from "./components/TodoList";
 import TodoWriteForm from "./components/TodoWriteForm";
 function TodoLists() {
   const [todos, setTodos] = useState([
-    { id: 1, text: "내용1", checked: true },
-    { id: 2, text: "내용2", checked: false },
-    { id: 3, text: "내용3", checked: false },
+    { id: 1, text: "내용1", checked: true, priority: 1 },
+    { id: 2, text: "내용2", checked: false, priority: 2 },
+    { id: 3, text: "내용3", checked: false, priority: 3 },
   ]);
 
   let maxId = useRef(4); // 그냥 변수 사용 시 id 값이 렌더링 할 때마다 초기화되는 문제 생김
@@ -22,8 +22,11 @@ function TodoLists() {
     setTodos(newState);
   };
 
-  const addTodo = (text: string) => {
-    const newState = [...todos, { id: maxId.current++, text, checked: false }];
+  const addTodo = (text: string, priority: number) => {
+    const newState = [
+      ...todos,
+      { id: maxId.current++, text, checked: false, priority },
+    ];
     setTodos(newState);
   };
 
