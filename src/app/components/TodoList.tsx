@@ -1,4 +1,4 @@
-import TodoItem from "../TodoItem/page";
+import TodoItem from "./TodoItem";
 
 type Todo = {
   id: number;
@@ -15,14 +15,15 @@ type Props = {
 function TodoList({ todos, deleteTodo, toggleTodo }: Props) {
   return (
     <ul className="max-w-md mx-auto mt-6 space-y-3">
-      {todos.map((el) => (
-        <TodoItem
-          key={el.id}
-          el={el}
-          deleteTodo={deleteTodo}
-          toggleTodo={toggleTodo}
-        />
-      ))}
+      {todos &&
+        todos.map((el) => (
+          <TodoItem
+            key={el.id}
+            el={el}
+            deleteTodo={deleteTodo}
+            toggleTodo={toggleTodo}
+          />
+        ))}
     </ul>
   );
 }

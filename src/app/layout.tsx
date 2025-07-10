@@ -31,20 +31,7 @@ export default function RootLayout({
         <header className="bg-white shadow-md">
           <nav className="container mx-auto flex items-center justify-between p-4">
             <h1 className="text-xl font-bold text-blue-600">Todo List App</h1>
-            <div className="flex gap-4">
-              <Link
-                href="/TodoLists/TodoWriteForm"
-                className="px-4 py-2 rounded-md hover:bg-blue-100 text-blue-600 font-medium transition"
-              >
-                글쓰기
-              </Link>
-              <Link
-                href="/TodoLists/TodoList"
-                className="px-4 py-2 rounded-md hover:bg-blue-100 text-blue-600 font-medium transition"
-              >
-                글 목록
-              </Link>
-            </div>
+            <div className="flex gap-4"></div>
           </nav>
         </header>
         <main className="container mx-auto flex-1 p-6">{children}</main>
